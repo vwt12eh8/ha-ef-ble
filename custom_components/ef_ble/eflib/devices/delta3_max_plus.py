@@ -17,7 +17,7 @@ class _ACPortPower(repeated_pb_field_type(pb.pow_get_ac_out_list.pow_get_ac_out_
     index: int
 
     def get_item(self, value: Sequence[float]) -> float | None:
-        return round(value[self.index], 2) if value else None
+        return -round(value[self.index], 2) if value else None
 
 
 class Device(delta3_plus.Device):
